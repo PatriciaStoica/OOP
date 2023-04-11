@@ -24,10 +24,9 @@ public:
 template<typename type>
 inline DynamicArray<type>::DynamicArray()
 {
-	/*this->da = new type[2];
+	this->da = new type[2];
 	this->capacity = 2;
 	this->length = 0;
-	*/
 }
 
 template<typename type>
@@ -51,6 +50,7 @@ inline void DynamicArray<type>::resize()
 	for (int i = 0; i < this->length; i++)
 		newDa[i] = this->da[i];
 	delete[] this->da;
+	this->capacity *= 2;
 	this->da = newDa;
 }
 
